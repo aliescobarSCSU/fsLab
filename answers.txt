@@ -1,0 +1,20 @@
+Q1 : Why didn't we use sudo before node lab.js in this case?
+	We didn't use sudo because running node lab.js only needs 
+	user-level permissions. sudo is only needed for commands 
+	that require administrator (root) rights.
+
+Q2 : What does lab.js do?
+	It reads the contents of plain.txt and prints it to the terminal.
+
+Q3 : Why does *************after readFile*****************
+appear before the contents of plain.txt in the output while the call to 
+readFile is before the console.log call that prints this line?
+	Because fs.readFile in Node.js is asynchronous. Which means Node 
+	doesn't wait for the file reading to finish before moving on to 
+	the next line. so console.log("after readFile") runs first, and then
+	once the file is done reading, Node prints its contents.
+
+Q4 : What does the function toString('utf8') do?
+	It converts the raw byte buffer (numbers representing characters)
+	into a human-readable string using the UTF-8 encoding. Without it, 
+	Node prints the raw byte values (numbers).
