@@ -5,7 +5,7 @@ fs.readFile('./plain.txt',function (err, content){
 	if (err) { 
 		return console.log(err) 
 	} 
-		console.log(content.toString('utf8')) 
+		console.log(content) 
 }); 
 console.log('******************after readFile****************');
 
