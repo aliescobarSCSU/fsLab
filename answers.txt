@@ -18,3 +18,9 @@ Q4 : What does the function toString('utf8') do?
 	It converts the raw byte buffer (numbers representing characters)
 	into a human-readable string using the UTF-8 encoding. Without it, 
 	Node prints the raw byte values (numbers).
+
+Q5 : We  don’t need to convert the read buffer using toString('utf8') 
+before we serve it up to the client. Why not?
+	You don't need .tostring('utf8') , because res.end() can send the
+	file buffer directly to the browser. (can read and display the
+	buffer as text, so converting it isn't necessary)
