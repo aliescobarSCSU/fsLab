@@ -24,3 +24,15 @@ before we serve it up to the client. Why not?
 	You don't need .tostring('utf8') , because res.end() can send the
 	file buffer directly to the browser. (can read and display the
 	buffer as text, so converting it isn't necessary)
+Q6 : How can we build a server that is capable of serving all types of files
+without having to change the code every time?
+	We can make the server check the file extension adn automatically set
+	the appropriate Content-Type header. That way it can serve HTML, JS,
+	TXT, JPG, or any file without changing the code each time.
+
+Q7 : : The http server should probably able to send html, js, and other files
+to the browser, as well as respond to queries/routes like the one you implemented 
+in homework assignment 2. How can we combine all these features in the same server?
+	We can handle static files by reading them based on the requested path, 
+	and handle dynamic routes by checking for specific URL patterns and responding 
+	accordingly. Using a framework like Express.js makes it easier to serve both static and dynamic content in the same server.
